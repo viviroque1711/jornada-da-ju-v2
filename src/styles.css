@@ -1498,6 +1498,8 @@ img{display:block;max-width:100%}
   padding:0 10px 4px;
 }
 .home-hero-actions .button{min-height:48px}
+.home-hero-actions .button-outline{border:1px solid #c9a85b;background:rgba(8,8,8,.38);color:#f6f4ef;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.home-hero-actions .button-outline:hover{background:#e8b936;color:#111;transform:translateY(-2px)}
 .button-outline{border:1px solid #9c8456;background:transparent;color:#24211c}
 .button-outline:hover{background:#e7dece;transform:translateY(-2px)}
 .timeline-pix-link-wrap{display:flex;justify-content:flex-end;max-width:1120px;margin:-12px auto 30px}
