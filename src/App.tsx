@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
-  ArrowDown, ArrowUpRight, Heart, Copy, Check,
+  ArrowUpRight, Heart, Copy, Check,
   Menu, X, MessageCircle, ShieldCheck
 } from "lucide-react";
 import { campaign, storySections, voiceQuotes, campaignNeeds, faithDecision } from "./content";
