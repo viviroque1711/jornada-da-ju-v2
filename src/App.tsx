@@ -86,7 +86,7 @@ function HomePage() {
     { title: "Intestino e vesícula", detail: "Cerca de dez anos depois, novos diagnósticos mudaram novamente o caminho." },
     { title: "Quatro tumores no fígado", detail: "Quando a remissão parecia próxima, veio outra notícia." },
     { title: "Pâncreas, vias biliares e pulmão", detail: "Novos desafios, complicações e a continuidade do tratamento." },
-    { title: "A cura", detail: "É a esperança que carrego e o futuro pelo qual sigo lutando, com fé, cuidado e apoio. Você pode ajudar." }
+    { title: "A cura", detail: "É a certeza que carrego: é o futuro pelo qual sigo lutando e vou vencer. Com fé, cuidado e apoio, você pode ajudar." }
   ];
   return (
     <>
@@ -139,7 +139,7 @@ function HomePage() {
           <strong>{milestones[active].title}</strong>
           <p>{milestones[active].detail}</p>
         </div>
-        {active === 4 && <div className="timeline-pix-link-wrap"><a className="timeline-pix-link" href="#pix">VOCÊ PODE AJUDAR · FAZER UM PIX <ArrowUpRight size={15}/></a></div>}
+        {active === 4 && <div className="timeline-pix-link-wrap"><button className="timeline-pix-link" type="button" onClick={copyHomePix}>{pixCopied ? "CÓDIGO PIX COPIADO" : "VOCÊ PODE AJUDAR FAZENDO UM PIX"} {pixCopied ? <Check size={15}/> : <Copy size={15}/>}</button></div>}
       </section>
 
       <section className="home-pix" id="pix">
