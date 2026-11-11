@@ -98,7 +98,7 @@ function HomePage() {
             <p className="home-lead">A Juliana continua sua jornada, enfrentando desafios e escolhendo viver. E você também pode fazer parte dessa história.</p>
           </div>
           <div className="home-hero-media">
-            <video autoPlay muted loop controls playsInline preload="auto" aria-label="Vídeo de Juliana. Use os controles para ativar o áudio.">
+            <video controls playsInline preload="metadata" aria-label="Vídeo de Juliana com áudio. Pressione reproduzir para assistir com som.">
               <source src={campaign.video.src} type="video/mp4"/>
             </video>
           </div>
