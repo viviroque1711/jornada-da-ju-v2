@@ -27,7 +27,7 @@ function Header({ page }: { page: Page }) {
   return (
     <header className="topbar">
       <a className="roque-brand roque-brand-header" href="https://roquebusinessevolution.com/" target="_blank" rel="noreferrer" aria-label="Roque Business Evolution">
-        <img src="/jornada-da-ju/images/roque-business-evolution.svg" alt="Roque Business Evolution"/>
+        <img src="/jornada-da-ju-v2/images/roque-business-evolution.svg" alt="Roque Business Evolution"/>
       </a>
       <a className="site-wordmark" href="#/" aria-label="Viva a Vida, Juliana">VIVA A VIDA <span>· JULIANA</span></a>
       <button className="menu-toggle" aria-label={menuOpen ? "Fechar menu" : "Abrir menu"} onClick={() => setMenuOpen(!menuOpen)}>
@@ -47,7 +47,7 @@ function Footer() {
   return (
     <footer className="footer">
       <a className="roque-brand roque-brand-footer" href="https://roquebusinessevolution.com/" target="_blank" rel="noreferrer" aria-label="Roque Business Evolution — conhecer a empresa">
-        <img src="/jornada-da-ju/images/roque-business-evolution.svg" alt="Roque Business Evolution"/>
+        <img src="/jornada-da-ju-v2/images/roque-business-evolution.svg" alt="Roque Business Evolution"/>
       </a>
       <div className="footer-center">
         <p>Uma história real. Uma corrente de solidariedade.</p>
@@ -85,7 +85,8 @@ function HomePage() {
     { title: "Câncer de mama", detail: "A primeira batalha. Cirurgia, tratamento e um recomeço." },
     { title: "Intestino e vesícula", detail: "Cerca de dez anos depois, novos diagnósticos mudaram novamente o caminho." },
     { title: "Quatro tumores no fígado", detail: "Quando a remissão parecia próxima, veio outra notícia." },
-    { title: "Pâncreas, vias biliares e pulmão", detail: "Novos desafios, complicações e a continuidade do tratamento." }
+    { title: "Pâncreas, vias biliares e pulmão", detail: "Novos desafios, complicações e a continuidade do tratamento." },
+    { title: "A cura", detail: "É a esperança que carrego e o futuro pelo qual sigo lutando, com fé, cuidado e apoio. Você pode ajudar." }
   ];
   return (
     <>
@@ -103,7 +104,8 @@ function HomePage() {
           </div>
           <div className="home-hero-actions">
             <a className="button button-gold" href="#/como-ajudar">COMO AJUDAR <ArrowUpRight size={16}/></a>
-            <a className="text-link" href="#/minha-historia">CONHEÇA A JULIANA <ArrowDown size={15}/></a>
+            <a className="button button-outline" href="#/minha-historia">MINHA HISTÓRIA <ArrowUpRight size={16}/></a>
+            <a className="button button-outline" href="#/minha-jornada">MINHA JORNADA <ArrowUpRight size={16}/></a>
           </div>
         </div>
         <div className="home-hero-bottom"><span>VIVA A VIDA, JULIANA</span><span>01 / 02</span></div>
@@ -112,7 +114,7 @@ function HomePage() {
       <section className="home-timeline" id="jornada-resumo">
         <div className="home-timeline-heading">
           <SectionLabel>UM CAMINHO DE MUITOS RECOMEÇOS</SectionLabel>
-          <h2>Minha jornada,<br/><em>em quatro momentos.</em></h2>
+          <h2>Minha jornada,<br/><em>em cinco momentos.</em></h2>
           <p>Conheça alguns dos capítulos que marcaram essa caminhada. Selecione cada etapa para descobrir um pouco mais.</p>
         </div>
         <div className="ascending-timeline" aria-label="Linha do tempo interativa da jornada de Juliana">
@@ -137,9 +139,10 @@ function HomePage() {
           <strong>{milestones[active].title}</strong>
           <p>{milestones[active].detail}</p>
         </div>
+        {active === 4 && <div className="timeline-pix-link-wrap"><a className="timeline-pix-link" href="#pix">VOCÊ PODE AJUDAR · FAZER UM PIX <ArrowUpRight size={15}/></a></div>}
       </section>
 
-      <section className="home-pix" id="como-ajudar">
+      <section className="home-pix" id="pix">
         <div className="home-pix-inner">
           <header className="home-pix-heading">
             <h2>A história da Juliana continua<span>...</span></h2>
