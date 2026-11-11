@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 580" role="img" aria-labelledby="title">
+<title id="title">Roque Business Evolution</title>
+<g fill="none" stroke="#b88700" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M250 28 307 65 363 116 411 175 399 252 373 330 316 389 250 418 172 386 112 331 88 245 95 159 166 88 250 28Z"/>
+<path d="M250 28 242 146 307 65 336 144 363 116 399 252 316 389 250 418 172 386 112 331 95 159 166 88 250 28"/>
+<path d="M95 159 242 146 336 144 411 175 316 235 399 252 373 330 316 389 225 344 112 331 145 215 225 225 316 235 250 28"/>
+<path d="M166 88 145 215 225 225 307 65M242 146 225 225 316 235 373 330M112 331 225 344 250 418M145 215 195 310 225 344 316 389M336 144 316 235 195 310"/>
+</g>
+<g fill="#b88700">
+<circle cx="250" cy="28" r="17"/><circle cx="307" cy="65" r="11"/><circle cx="363" cy="116" r="10"/><circle cx="411" cy="175" r="12"/><circle cx="399" cy="252" r="11"/><circle cx="373" cy="330" r="15"/><circle cx="316" cy="389" r="12"/><circle cx="250" cy="418" r="20"/><circle cx="172" cy="386" r="10"/><circle cx="112" cy="331" r="11"/><circle cx="95" cy="159" r="16"/><circle cx="166" cy="88" r="10"/><circle cx="242" cy="146" r="17"/><circle cx="336" cy="144" r="12"/><circle cx="316" cy="235" r="10"/><circle cx="225" cy="225" r="20"/><circle cx="145" cy="215" r="13"/><circle cx="195" cy="310" r="10"/><circle cx="225" cy="344" r="12"/>
+<circle cx="450" cy="115" r="6"/><circle cx="465" cy="175" r="5"/><circle cx="438" cy="85" r="5"/><circle cx="392" cy="48" r="5"/>
+</g>
+<text x="250" y="520" text-anchor="middle" fill="#fff" font-family="Montserrat,Arial,sans-serif" font-size="83" letter-spacing="5">Roque</text>
+<text x="250" y="565" text-anchor="middle" fill="#b88700" font-family="Montserrat,Arial,sans-serif" font-size="17" letter-spacing="10">BUSINESS EVOLUTION</text>
+</svg>
