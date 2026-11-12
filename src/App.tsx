@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowUpRight, Heart, Copy, Check,
-  Menu, X, MessageCircle, ShieldCheck
+  Menu, X, MessageCircle, ShieldCheck, Volume2
 } from "lucide-react";
 import { campaign, storySections, voiceQuotes, campaignNeeds, faithDecision } from "./content";
 
@@ -63,6 +63,21 @@ function Footer() {
 
 function HomePage() {
   const [active, setActive] = useState(0);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+  const [soundEnabled, setSoundEnabled] = useState(false);
+  async function toggleHeroSound() {
+    const video = heroVideoRef.current;
+    if (!video) return;
+    if (video.muted) {
+      video.muted = false;
+      video.volume = 1;
+      try { await video.play(); setSoundEnabled(true); }
+      catch { video.muted = true; setSoundEnabled(false); }
+    } else {
+      video.muted = true;
+      setSoundEnabled(false);
+    }
+  }
   const [pixCopied, setPixCopied] = useState(false);
   async function copyHomePix() {
     try {
@@ -98,9 +113,12 @@ function HomePage() {
             <p className="home-lead">A Juliana continua sua jornada, enfrentando desafios e escolhendo viver. E você também pode fazer parte dessa história.</p>
           </div>
           <div className="home-hero-media">
-            <video autoPlay muted loop controls playsInline preload="auto" poster={campaign.video.poster} aria-label="Vídeo de Juliana. Use os controles para ativar o áudio.">
+            <video ref={heroVideoRef} autoPlay muted loop controls playsInline preload="auto" poster={campaign.video.poster} aria-label="Vídeo de Juliana. Toque no ícone de alto-falante para ativar o áudio.">
               <source src={campaign.video.src} type="video/mp4"/>
             </video>
+            <button className="hero-speaker-toggle" type="button" onClick={toggleHeroSound} aria-label={soundEnabled ? "Desativar som" : "Ativar som"} title={soundEnabled ? "Desativar som" : "Ativar som"}>
+              <Volume2 size={19} strokeWidth={2}/>
+            </button>
           </div>
           <div className="home-hero-actions">
             <a className="button button-gold" href="#/como-ajudar">COMO AJUDAR <ArrowUpRight size={16}/></a>
