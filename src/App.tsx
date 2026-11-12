@@ -116,7 +116,7 @@ function HomePage() {
             <p className="home-lead">A Juliana continua sua jornada, enfrentando desafios e escolhendo viver. E você também pode fazer parte dessa história.</p>
           </div>
           <div className="home-hero-media">
-            <video ref={heroVideoRef} autoPlay muted={!soundEnabled} loop controls playsInline preload="auto" aria-label="Vídeo de Juliana. Toque no ícone de alto-falante para ativar o áudio.">
+            <video ref={heroVideoRef} autoPlay muted={!soundEnabled} loop playsInline preload="auto" aria-label="Vídeo de Juliana. Toque no ícone de alto-falante para ativar o áudio.">
               <source src={campaign.video.src} type="video/mp4"/>
             </video>
             <button className="hero-speaker-toggle" type="button" onClick={toggleHeroSound} aria-label={soundEnabled ? "Desativar som" : "Ativar som"} title={soundEnabled ? "Desativar som" : "Ativar som"}>
