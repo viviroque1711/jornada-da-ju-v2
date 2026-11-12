@@ -68,17 +68,20 @@ function HomePage() {
   function toggleHeroSound() {
     const video = heroVideoRef.current;
     if (!video) return;
-    if (video.muted) {
-      video.muted = false;
-      video.volume = 1;
-      setSoundEnabled(true);
+
+    // Desmutar diretamente no gesto do usuário: o vídeo já está em reprodução.
+    // Evita chamar play() desnecessariamente e perder a autorização de áudio do navegador.
+    const nextMuted = !video.muted;
+    video.volume = 1;
+    video.muted = nextMuted;
+    setSoundEnabled(!nextMuted);
+
+    // Só solicita play quando o vídeo realmente estiver pausado.
+    if (video.paused) {
       void video.play().catch(() => {
         video.muted = true;
         setSoundEnabled(false);
       });
-    } else {
-      video.muted = true;
-      setSoundEnabled(false);
     }
   }
   const [pixCopied, setPixCopied] = useState(false);
