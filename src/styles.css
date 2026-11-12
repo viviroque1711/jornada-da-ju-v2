@@ -1674,5 +1674,3 @@ img{display:block;max-width:100%}
 
 /* Explicit sound activation for the hero video */
 .home-hero-media{position:relative}
-.hero-sound-toggle{position:absolute;z-index:3;right:18px;bottom:18px;display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border:1px solid #d4b46a;border-radius:3px;background:#171615e8;color:#fff;font:700 11px/1.2 inherit;letter-spacing:.1em;cursor:pointer;box-shadow:0 3px 14px #0005}
-.hero-sound-toggle:hover,.hero-sound-toggle:focus-visible{background:#d4b46a;color:#171615;outline:2px solid #fff;outline-offset:2px}
