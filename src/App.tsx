@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
@@ -63,16 +63,6 @@ function Footer() {
 
 function HomePage() {
   const [active, setActive] = useState(0);
-  const heroVideoRef = useRef<HTMLVideoElement>(null);
-  const [soundEnabled, setSoundEnabled] = useState(false);
-  async function enableHeroSound() {
-    const video = heroVideoRef.current;
-    if (!video) return;
-    video.muted = false;
-    video.volume = 1;
-    try { await video.play(); setSoundEnabled(true); }
-    catch { setSoundEnabled(false); }
-  }
   const [pixCopied, setPixCopied] = useState(false);
   async function copyHomePix() {
     try {
@@ -108,10 +98,9 @@ function HomePage() {
             <p className="home-lead">A Juliana continua sua jornada, enfrentando desafios e escolhendo viver. E você também pode fazer parte dessa história.</p>
           </div>
           <div className="home-hero-media">
-            <video ref={heroVideoRef} autoPlay muted loop controls playsInline preload="auto" aria-label="Vídeo de Juliana. Use o botão Ativar som para ouvir.">
+            <video autoPlay muted loop controls playsInline preload="auto" poster={campaign.video.poster} aria-label="Vídeo de Juliana. Use os controles para ativar o áudio.">
               <source src={campaign.video.src} type="video/mp4"/>
             </video>
-            {!soundEnabled && <button className="hero-sound-toggle" type="button" onClick={enableHeroSound}><span aria-hidden="true">🔊</span> ATIVAR SOM</button>}
           </div>
           <div className="home-hero-actions">
             <a className="button button-gold" href="#/como-ajudar">COMO AJUDAR <ArrowUpRight size={16}/></a>
