@@ -65,6 +65,25 @@ function HomePage() {
   const [active, setActive] = useState(0);
   const heroVideoRef = useRef<HTMLVideoElement>(null);
   const [soundEnabled, setSoundEnabled] = useState(false);
+
+  // Interrompe vídeo e áudio quando o hero sai da área visível.
+  // Ao voltar ao topo, a reprodução só recomeça se a pessoa tocar no controle.
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || entry.intersectionRatio < 0.25) {
+          video.pause();
+        }
+      },
+      { threshold: [0, 0.25] }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
   function toggleHeroSound() {
     const video = heroVideoRef.current;
     if (!video) return;
