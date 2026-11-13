@@ -1677,3 +1677,8 @@ img{display:block;max-width:100%}
 
 .hero-speaker-toggle{position:absolute;z-index:4;top:18px;right:18px;width:42px;height:42px;display:grid;place-items:center;padding:0;border:1px solid #ffffff75;border-radius:50%;background:#111c;color:#fff;cursor:pointer;transition:background .2s ease,border-color .2s ease}
 .hero-speaker-toggle:hover,.hero-speaker-toggle:focus-visible{background:#d4b46a;color:#171615;border-color:#d4b46a;outline:2px solid #fff;outline-offset:2px}
+
+/* Correção de empilhamento: mantém o vídeo e seu controle acima do fundo do hero. */
+.home-hero-media{z-index:0}
+.home-hero-content{position:relative;z-index:1}
+.hero-speaker-toggle{z-index:5;pointer-events:auto}
